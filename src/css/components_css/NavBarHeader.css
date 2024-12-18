@@ -1,0 +1,95 @@
+.navbar {
+  position: relative;
+  width: 100%; /* Asegura que el contenedor principal de la barra ocupe todo el ancho */
+}
+
+.hamburger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.line {
+  width: 30px;
+  height: 3px;
+  background: black;
+  transition: transform 0.3s;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: absolute;
+  top: 4.5rem;
+  left: -2rem;
+  width: 100vw; /* Asegura que el menú ocupe toda la ventana del navegador */
+  background: var(--bg-class-dark);
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+  max-height: 0;
+  visibility: hidden; /* Hace que el menú sea invisible cuando está cerrado */
+  opacity: 0; /* Suaviza la transición de visibilidad */
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s; /* Añade transiciones */
+}
+
+.menu.open {
+  max-height: 300px; /* Ajusta según el contenido del menú */
+  visibility: visible; /* Muestra el menú */
+  opacity: 1; /* Muestra la opacidad */
+}
+
+.line.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.line.open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.bg-light {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgb(221, 221, 221) 100%
+  );
+  color: var(--txt-color-light);
+}
+
+.bg-dark {
+  background: rgb(13, 16, 75);
+  background: linear-gradient(
+    180deg,
+    rgba(13, 16, 75, 1) 0%,
+    rgba(5, 26, 136, 1) 100%
+  );
+  color: var(--txt-color-dark);
+}
+
+/* Ocultar el menú hamburguesa en pantallas grandes */
+@media (min-width: 1024px) {
+  .hamburger {
+    display: none;
+  }
+
+  .menu {
+    position: static; /* Cambiar el menú a un diseño estático */
+    max-height: none; /* Elimina la restricción de altura */
+    visibility: visible; /* Siempre visible en pantallas grandes */
+    opacity: 1; /* Siempre opaco */
+    flex-direction: row; /* Muestra el menú en una fila */
+    border: none; /* Elimina los bordes */
+    padding: 0; /* Ajusta el espaciado */
+    gap: 1.5rem;
+    width: 100%;
+    background: none;
+  }
+}

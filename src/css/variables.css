@@ -1,0 +1,13 @@
+:root {
+  /* MAIN COLORS DARK */
+  --main-bg-dark-Color: #07092d;
+  --main-bg-content-color-dark: #181a47;
+  --txt-color-dark: #fff;
+  --main-color-dark: #0009af;
+
+  /* MAIN COLORS LIGHT */
+  --main-bg-light-Color: #ffffff;
+  --main-bg-content-color-light: #181a47;
+  --txt-color-light: #000000;
+  --main-color-light: #0009af;
+}

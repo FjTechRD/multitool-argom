@@ -1,0 +1,57 @@
+@import url("./variables.css");
+
+/* Reset CSS completo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  line-height: 1.5;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #000;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  margin: 0;
+  border: none;
+}

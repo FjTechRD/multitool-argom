@@ -1,0 +1,50 @@
+.home__page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.first__section {
+  background-color: var(--main-bg-content-color-dark);
+  padding: 3rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.martingala__calculator {
+  text-align: center;
+}
+
+.martingala__input {
+  padding: 0.8rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn__martin-gala {
+  margin-top: 1.2rem;
+  background-color: #007bff;
+  color: white;
+  padding: 1rem 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.information__baca {
+  text-align: center;
+}
+
+.information__baca-content {
+  padding: 0 3rem;
+}
+
+@media (min-width: 1024px) {
+  .first__section {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+}
