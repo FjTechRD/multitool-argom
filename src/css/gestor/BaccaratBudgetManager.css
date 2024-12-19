@@ -1,0 +1,98 @@
+/* General */
+.budget__maneger__home-page {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.budget-manager {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #292949;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Título */
+.budget-manager-title {
+  text-align: center;
+  font-size: 24px;
+  color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+/* Información del presupuesto */
+.budget-info {
+  display: flex;
+  justify-content: space-between;
+  background-color: #242424;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.budget-info-item {
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Formulario de apuestas */
+.bet-form {
+  margin-bottom: 20px;
+}
+
+/* Historial */
+.bet-history {
+  background-color: #2a2a2a;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.bet-history h4 {
+  font-size: 20px;
+  color: #f0f0f0;
+}
+
+.bet-history ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bet-history li {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #cccccc;
+}
+
+/* Estadísticas */
+.statistics {
+  background-color: #2a2a2a;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.statistics h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #f0f0f0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .budget-manager {
+    padding: 15px;
+  }
+
+  .budget-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .budget-info-item {
+    margin-bottom: 10px;
+  }
+}

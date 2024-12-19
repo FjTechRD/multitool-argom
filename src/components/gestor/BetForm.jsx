@@ -1,29 +1,28 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addBet, updateBalance } from "../../store/slices/budgetSlice.slide"; // Ruta correcta
+import { addBet, updateBalance } from "../../store/slices/budgetSlice.slide";
+import "../../css/gestor/BetForm.css";
 
 const BetForm = () => {
   const dispatch = useDispatch();
-  const [balanceInput, setBalanceInput] = useState(""); // Para actualizar el balance
-  const [betAmount, setBetAmount] = useState(""); // Para realizar una apuesta
-  const [betResult, setBetResult] = useState("win"); // Para saber si la apuesta fue ganada o perdida
+  const [balanceInput, setBalanceInput] = useState("");
+  const [betAmount, setBetAmount] = useState("");
+  const [betResult, setBetResult] = useState("win");
   const remainingCapital = useSelector(
     (state) => state.budget.remainingCapital
-  ); // Obtener el balance actual
+  );
 
-  // Actualiza el balance
   const handleUpdateBalance = (e) => {
     e.preventDefault();
     const newBalance = parseFloat(balanceInput);
     if (!isNaN(newBalance)) {
-      dispatch(updateBalance(newBalance)); // Llamada a la acción para actualizar balance
-      setBalanceInput(""); // Limpiar el input
+      dispatch(updateBalance(newBalance));
+      setBalanceInput("");
     } else {
       alert("Por favor, introduce un número válido");
     }
   };
 
-  // Realiza una apuesta
   const handlePlaceBet = (e) => {
     e.preventDefault();
     const amount = parseFloat(betAmount);
@@ -38,43 +37,50 @@ const BetForm = () => {
       return;
     }
 
-    const result = betResult; // Determinar si la apuesta fue ganada o perdida
-    dispatch(addBet({ amount, result })); // Llamada a la acción para añadir la apuesta
-    setBetAmount(""); // Limpiar el input de la apuesta
+    const result = betResult;
+    dispatch(addBet({ amount, result }));
+    setBetAmount("");
   };
 
   return (
-    <div>
-      <h2>Actualizar Balance</h2>
-      <form onSubmit={handleUpdateBalance}>
+    <div className="bet-form">
+      <h2 className="form-title">Actualizar Balance</h2>
+      <form className="balance-form" onSubmit={handleUpdateBalance}>
         <input
+          className="form-input"
           type="number"
           placeholder="Nuevo Balance"
           value={balanceInput}
           onChange={(e) => setBalanceInput(e.target.value)}
         />
-        <button type="submit">Actualizar</button>
+        <button className="form-button" type="submit">
+          Actualizar
+        </button>
       </form>
 
-      <h2>Realizar Apuesta</h2>
-      <form onSubmit={handlePlaceBet}>
+      <h2 className="form-title">Realizar Apuesta</h2>
+      <form className="bet-form-container" onSubmit={handlePlaceBet}>
         <input
+          className="form-input"
           type="number"
           placeholder="Monto de la Apuesta"
           value={betAmount}
           onChange={(e) => setBetAmount(e.target.value)}
         />
         <select
+          className="form-select"
           value={betResult}
           onChange={(e) => setBetResult(e.target.value)}
         >
           <option value="win">Ganada</option>
           <option value="lose">Perdida</option>
         </select>
-        <button type="submit">Realizar Apuesta</button>
+        <button className="form-button" type="submit">
+          Realizar Apuesta
+        </button>
       </form>
 
-      <div>
+      <div className="remaining-capital">
         <h3>Capital Restante: ${remainingCapital}</h3>
       </div>
     </div>

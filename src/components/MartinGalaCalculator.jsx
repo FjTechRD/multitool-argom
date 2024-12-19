@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import "../css/components_css/MartinGalaCalc.css";
 
 const MartinGalaCalculator = () => {
   const [initialBet, setInitialBet] = useState(0);
   const [numberOfBets, setNumberOfBets] = useState(0);
   const [totalCost, setTotalCost] = useState(0);
+  const [multiplier, setMultiplier] = useState(2); // Por defecto, Martingala normal
 
   const calculateMartingaleCost = () => {
     let total = 0;
@@ -11,7 +13,7 @@ const MartinGalaCalculator = () => {
 
     for (let i = 0; i < numberOfBets; i++) {
       total += bet;
-      bet *= 2; // Doblar apuesta en cada tiro
+      bet *= multiplier; // Multiplica la apuesta por el multiplicador seleccionado
     }
 
     setTotalCost(total);
@@ -45,6 +47,20 @@ const MartinGalaCalculator = () => {
           placeholder="Ej: 5"
           style={{ padding: "5px", width: "100px" }}
         />
+      </div>
+      <div className="martingala__input">
+        <label htmlFor="multiplier" style={{ marginRight: "10px" }}>
+          Seleccionar lógica:
+        </label>
+        <select
+          id="multiplier"
+          value={multiplier}
+          onChange={(e) => setMultiplier(parseFloat(e.target.value))}
+          style={{ padding: "5px", width: "120px" }}
+        >
+          <option value={2}>Duplicar (Martingala normal)</option>
+          <option value={3}>Triplicar</option>
+        </select>
       </div>
       <button onClick={calculateMartingaleCost} className="btn__martin-gala">
         Calcular costo total

@@ -8,6 +8,7 @@ import InitialCapitalForm from "./InitialCapitalForm";
 import BetForm from "./BetForm";
 import BetHistory from "./BetHistory";
 import Statistics from "./Statistics";
+import "../../css/gestor/BaccaratBudgetManager.css";
 
 const BaccaratBudgetManager = () => {
   const dispatch = useDispatch();
@@ -24,15 +25,19 @@ const BaccaratBudgetManager = () => {
   };
 
   return (
-    <div>
-      <h3>Gestor de Presupuesto</h3>
+    <div className="budget-manager">
+      <h3 className="budget-manager-title">Gestor de Presupuesto</h3>
 
       {!initialCapital ? (
         <InitialCapitalForm onSetCapital={handleSetInitialCapital} />
       ) : (
-        <div>
-          <h4>Capital Inicial: ${initialCapital}</h4>
-          <h4>Balance Actual: ${remainingCapital}</h4>
+        <div className="budget-info">
+          <h4 className="budget-info-item">
+            Capital Inicial: ${initialCapital}
+          </h4>
+          <h4 className="budget-info-item">
+            Balance Actual: ${remainingCapital}
+          </h4>
         </div>
       )}
 

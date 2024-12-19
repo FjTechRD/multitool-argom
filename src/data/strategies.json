@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Estrategia Martingala",
+    "shortDescription": "La estrategia Martingala implica duplicar tu apuesta después de cada pérdida...",
+    "fullDescription": "La estrategia Martingala es una de las más conocidas. Consiste en duplicar tu apuesta cada vez que pierdes, con la intención de recuperar las pérdidas previas junto con una ganancia igual a la apuesta inicial. Es importante manejar bien tu presupuesto, ya que puede resultar arriesgada si se enfrenta a una racha larga de pérdidas."
+  },
+  {
+    "id": 2,
+    "title": "Estrategia Paroli",
+    "shortDescription": "La estrategia Paroli es opuesta a Martingala, se basa en aumentar la apuesta tras ganar...",
+    "fullDescription": "La estrategia Paroli consiste en aumentar tus apuestas después de cada victoria, en lugar de después de una pérdida. Esto permite aprovechar las rachas ganadoras mientras se limita el riesgo en las rachas perdedoras. Es ideal para jugadores que buscan beneficios pequeños pero constantes."
+  },
+  {
+    "id": 3,
+    "title": "Estrategia Fibonacci",
+    "shortDescription": "Esta estrategia sigue la secuencia de Fibonacci para determinar el monto de las apuestas...",
+    "fullDescription": "En la estrategia Fibonacci, cada apuesta es la suma de las dos apuestas anteriores en la secuencia. Es considerada menos agresiva que la Martingala y se enfoca en recuperar pérdidas gradualmente. Aunque es más segura, también puede resultar en pérdidas prolongadas si no se maneja adecuadamente."
+  }
+]
