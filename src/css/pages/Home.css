@@ -79,6 +79,19 @@
   background: #0056b3;
 }
 
+/* TABLES SECTION */
+.table__content__section {
+  text-align: center;
+}
+
+.table__content__section h3 {
+  padding-bottom: 1rem;
+}
+
+.schedule-tables__header {
+  padding: 2rem 0;
+}
+
 /* Modal */
 .modal {
   position: fixed;

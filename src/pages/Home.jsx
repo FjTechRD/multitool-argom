@@ -56,7 +56,7 @@ const Main = () => {
           </div>
         </div>
       )}
-      <section>
+      <section className="table__content__section">
         <ScheduleTable />
       </section>
     </main>

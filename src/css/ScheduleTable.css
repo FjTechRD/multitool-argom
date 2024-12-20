@@ -1,148 +1,99 @@
-/* Contenedor principal para las tablas */
-.schedule-tables {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(300px, 1fr)
-  ); /* Diseño responsivo */
-  gap: 20px; /* Espaciado entre tablas */
-  margin: 20px;
-  padding: 10px;
+/* Contenedor principal para el encabezado y las tablas */
+.schedule-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente */
+  padding: 15px;
 }
 
-/* Encabezado encima de las tablas */
-.schedule-header {
+/* Encabezado */
+.header-container {
   text-align: center;
-  margin-bottom: 20px; /* Espaciado con las tablas */
+  margin-bottom: 20px; /* Separación del contenido siguiente */
 }
 
-.schedule-header h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #0044cc;
-}
-
-.schedule-header p {
-  margin: 5px 0;
-  font-size: 16px;
+.header-container h1 {
+  font-size: 1.8rem; /* Tamaño adecuado para móviles */
+  margin: 0;
   color: #ffffff;
 }
 
-.highlight {
-  font-weight: bold;
-  color: #0073e6;
-  font-size: 1.1em;
+.header-container h2 {
+  font-size: 1.4rem;
+  margin-top: 5px;
+  color: #cccccc;
 }
 
-/* Estilo para las tablas */
+/* Contenedor de tablas */
+.schedule-tables {
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna para móviles */
+  gap: 15px; /* Espaciado entre tablas */
+  width: 100%; /* Que ocupe todo el ancho disponible */
+}
+
+/* Tablas */
 .schedule-table {
-  width: 100%;
-  border-collapse: collapse; /* Combina los bordes */
-  background-color: #ffffff; /* Fondo blanco */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-  border-radius: 8px; /* Bordes redondeados */
+  width: 100%; /* Siempre al 100% del contenedor */
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.3s ease; /* Transición suave al hover */
 }
 
-.schedule-table:hover {
-  transform: translateY(-5px); /* Eleva la tabla al hover */
-}
-
-/* Cabecera de las tablas */
 .schedule-table thead {
-  background-color: #0044cc; /* Color azul oscuro */
-  color: white; /* Texto blanco */
+  background-color: #0044cc;
+  color: white;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-/* Celdas de cabecera */
-.schedule-table th {
-  padding: 14px;
-  text-align: center;
-  font-size: 14px;
-}
-
-/* Celdas del cuerpo */
+.schedule-table th,
 .schedule-table td {
-  color: #333;
-  padding: 12px;
+  padding: 10px;
   text-align: center;
-  font-size: 14px;
-  border: 1px solid #ddd; /* Bordes claros */
+  font-size: 14px; /* Tamaño adecuado para móviles */
 }
 
-/* Filas alternas del cuerpo */
 .schedule-table tbody tr:nth-child(even) {
-  background-color: #f9f9f9; /* Fondo claro */
+  background-color: #f9f9f9;
 }
 
-/* Hover para las filas */
 .schedule-table tbody tr:hover {
-  background-color: rgba(
-    0,
-    68,
-    204,
-    0.1
-  ); /* Fondo azul claro al pasar el ratón */
-  cursor: pointer;
+  background-color: rgba(0, 68, 204, 0.1);
 }
 
-/* Diseño responsivo */
-@media (max-width: 768px) {
+/* Títulos individuales por tabla */
+.schedule-table-caption {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #0044cc;
+}
+
+/* Mejoras para pantallas grandes (desktop) */
+@media (min-width: 768px) {
+  .header-container h1 {
+    font-size: 2.5rem; /* Más grande en pantallas grandes */
+  }
+
+  .header-container h2 {
+    font-size: 1.8rem;
+  }
+
   .schedule-tables {
-    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(300px, 1fr)
+    ); /* Distribuye tablas en filas y columnas */
+    gap: 20px; /* Mayor separación entre tablas */
   }
 
   .schedule-table th,
   .schedule-table td {
-    font-size: 12px; /* Tamaño de fuente más pequeño */
-    padding: 10px; /* Espaciado reducido */
+    font-size: 16px; /* Aumenta el tamaño de texto */
+    padding: 14px;
   }
-
-  .schedule-header h2 {
-    font-size: 20px; /* Título más pequeño */
-  }
-
-  .schedule-header p {
-    font-size: 14px;
-  }
-}
-
-/* Títulos separados por tablas */
-.schedule-table-caption {
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 10px 0;
-  color: #0044cc;
-  text-transform: uppercase;
-}
-
-/* Indicadores de sincronización */
-.sync-status {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
-}
-
-.status-circle {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.status-circle.green {
-  background-color: #4caf50; /* Verde para sincronización correcta */
-}
-
-.status-circle.red {
-  background-color: #f44336; /* Rojo para falta de sincronización */
 }
