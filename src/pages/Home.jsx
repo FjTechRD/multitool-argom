@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MartinGalaCalculator from "../components/MartinGalaCalculator";
+import MartinGalaSpecific from '../components/MartinGalaSpecific'
 import "../css/pages/Home.css";
 import { useSelector } from "react-redux";
 import strategiesData from "../data/strategies.json"; // Importar estrategias desde el JSON
@@ -24,6 +25,7 @@ const Main = () => {
       <section className="first__section" style={{ backgroundColor: bgColor }}>
         <article className="martingala__section">
           <MartinGalaCalculator />
+          <MartinGalaSpecific/>
         </article>
         <span className="separator"></span>
         <article className="information__baca">
